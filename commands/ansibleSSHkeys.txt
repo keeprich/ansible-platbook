@@ -1,0 +1,33 @@
+cd /vagrant
+    6  ls
+    7  cd lab
+    8  ls
+    9  cat hosts
+   10  ansible webstack -i hosts -m command -a hostname  
+   11  ssh-keygen
+   12  ssh-copy-id localhost
+   13  ssh-copy-id web01 && ssh-copy-id web02 &&  ssh-copy-id web01 && ssh-copy-id web02 &&
+   14  ssh-copy-id web01 && ssh-copy-id web02 &&  ssh-copy-id web01 && ssh-copy-id web02 &&
+   15  ssh-copy-id web01 && ssh-copy-id web02 &&  ssh-copy-id web01 && ssh-copy-id web02 && ssh-copy-id db01 && ssh-copy-id loadbalancer
+   ansible webstack -i hosts -m command -a hostname  
+   18  ansible webstack -i hosts -m command -a cal       
+   19  ansible webstack -i hosts -m command -a date 
+
+# provides the full capabilities of Ansible commands after installation
+ ansible all -i hosts -m command -a 'sudo apt-get -y install python-simplejson'
+
+
+
+
+ ansible database -i hosts --become -m apt -a 'name=mysql-server state=present'
+   32  ansible database -i hosts --become -m service -a 'name=mysql-server state=started'
+   33  ansible database -i hosts  -m service -a 'name=mysql-server state=started'
+   34  ansible database -i hosts --become -m apt -a 'name=mysql-server state=present'
+   35  ansible all -i hosts --become -m apt -a 'update_cache=yes'
+   36  ansible database -i hosts -m service -a 'name=mysql-server state=started'
+   37  cat hosts
+   38  ansible database -i hosts --become -m service -a 'name=mysql-server state=restarted'
+   39  ansible webstack -i hosts -m command -a 'reboot --reboot'
+   40  ansible webstack -i hosts --become -m command -a 'reboot --reboot'
+   41  ping db01
+   42  ansible database -i hosts --become -m service -a 'name=mysql-server state=restarted'

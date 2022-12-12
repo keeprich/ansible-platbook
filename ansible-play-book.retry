@@ -1,0 +1,5 @@
+ansible-control
+db01
+loadbalancer
+web01
+web02
